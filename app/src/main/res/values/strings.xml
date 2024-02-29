@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Moyenne</string>
+    <string name="reussit">Félicitations, vous avez réussi et votre moyenne est de %1$d </string>
+    <string name="echec">Narvé, vous n\'avez pas réussi et votre moyenne est de %1$d </string>
+</resources>
