@@ -41,7 +41,7 @@ public class ReussiActivity extends AppCompatActivity {
 
         String telnumber = String.format("tel:%s", editText.getText().toString());
 
-        if (telnumber.isEmpty()) {
+        if (telnumber.isEmpty() || editText.getText().toString().length() < 8) {
             // toast message to enter a valid number
             Toast.makeText(this, "Please enter a valid number", Toast.LENGTH_SHORT).show();
         } else {
@@ -51,7 +51,7 @@ public class ReussiActivity extends AppCompatActivity {
         }
 
         String smsnumber = String.format("smsto: %s", editText.getText().toString());
-        if (smsnumber.isEmpty()) {
+        if (smsnumber.isEmpty() || editText.getText().toString().length() < 8) {
             // toast message to enter a valid number
             Toast.makeText(this, "Please enter a valid number", Toast.LENGTH_SHORT).show();
         } else {
