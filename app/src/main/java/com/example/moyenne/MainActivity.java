@@ -36,12 +36,12 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        double n1 = Double.parseDouble(note1.getText().toString());
-        double n2 = Double.parseDouble(note2.getText().toString());
-        double n3 = Double.parseDouble(note3.getText().toString());
-        double c1 = Double.parseDouble(coef1.getText().toString());
-        double c2 = Double.parseDouble(coef2.getText().toString());
-        double c3 = Double.parseDouble(coef3.getText().toString());
+        float n1 = Float.parseFloat(note1.getText().toString());
+        float n2 = Float.parseFloat(note2.getText().toString());
+        float n3 = Float.parseFloat(note3.getText().toString());
+        float c1 = Float.parseFloat(coef1.getText().toString());
+        float c2 = Float.parseFloat(coef2.getText().toString());
+        float c3 = Float.parseFloat(coef3.getText().toString());
 
         if (n1 < 0 || n1 > 20 || n2 < 0 || n2 > 20 || n3 < 0 || n3 > 20) {
             // moyenne.setText("Veuillez entrer des notes valides");
@@ -51,19 +51,20 @@ public class MainActivity extends AppCompatActivity {
         if (c1 > 3 || c1 <= 0 || c2 > 3 || c2 <= 0 || c3 <= 0  || c3 > 3) {
             // moyenne.setText("Veuillez entrer des coefficients valides");
             Toast.makeText(this, "Please enter valid coefficients", Toast.LENGTH_SHORT).show();
-        }
+        } else {
 
-        double moy = (n1 * c1 + n2 * c2 + n3 * c3) / (c1 + c2 + c3);
+        float moy = (n1 * c1 + n2 * c2 + n3 * c3) / (c1 + c2 + c3);
         // moyenne.setText("Moyenne: " + moy);
 
         if (moy >= 10) {
-            Intent success = new Intent(this, ReussiActivity.class);
-            success.putExtra("s", moy);
-            startActivity(success);
+            Intent i = new Intent(this, ReussiActivity.class);
+            i.putExtra("moyenne", moy);
+            startActivity(i);
         } else {
-            Intent fail = new Intent(this, EchecActivity.class);
-            fail.putExtra("f", moy);
-            startActivity(fail);
+            Intent i = new Intent(this, EchecActivity.class);
+            i.putExtra("moyenne", moy);
+            startActivity(i);
         }
     }
+}
 }
