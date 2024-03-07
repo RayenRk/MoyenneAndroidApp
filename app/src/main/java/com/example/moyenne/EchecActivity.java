@@ -32,16 +32,16 @@ public class EchecActivity extends AppCompatActivity {
     {
         EditText editText = findViewById(R.id.editText);
 
-        String telnumber = String.format("tel:%s", editText.getText().toString());
-
-        if (telnumber.isEmpty() || editText.getText().toString().length() < 8) {
-            // toast message to enter a valid number
-            Toast.makeText(this, "Please enter a valid number", Toast.LENGTH_SHORT).show();
-        } else {
-        Intent i1 = new Intent();
-        i1.setAction(Intent.ACTION_DIAL);
-        i1.setData(Uri.parse(telnumber));
-        }
+//        String telnumber = String.format("tel:%s", editText.getText().toString());
+//
+//        if (telnumber.isEmpty() || editText.getText().toString().length() < 8) {
+//            // toast message to enter a valid number
+//            Toast.makeText(this, "Please enter a valid number", Toast.LENGTH_SHORT).show();
+//        } else {
+//        Intent i1 = new Intent();
+//        i1.setAction(Intent.ACTION_DIAL);
+//        i1.setData(Uri.parse(telnumber));
+//        }
 
         String smsnumber = String.format("smsto: %s", editText.getText().toString());
         if (smsnumber.isEmpty() || editText.getText().toString().length() < 8) {
